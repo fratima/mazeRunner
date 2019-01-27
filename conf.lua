@@ -6,5 +6,5 @@ function love.conf(t)
  	t.window.height = 600 
  
  	-- For Windows debugging 
- 	t.console = false 
+ 	t.console = true 
  end 
