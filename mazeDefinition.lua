@@ -1,5 +1,5 @@
 
-mazeDefinition = {}
+fieldDefinition = {}
 
 -- Definition of mazes
 -- Maze -----
@@ -9,15 +9,15 @@ mazeDefinition = {}
 --  2= have been there already
 --  3= door
 
-mazeDefinition.freeWay       = 1
-mazeDefinition.haveBeenThere = 2
-mazeDefinition.lockedDoor    = 3 -- this means it is a wall with a door
-mazeDefinition.unlockedDoor  = 4 -- this means it is a free space with a door drawn
-mazeDefinition.free          = {freeWay,haveBeenThere}
-mazeDefinition.blocked       = {lockedDoor}
+fieldDefinition.freeWay       = 1
+fieldDefinition.haveBeenThere = 2
+fieldDefinition.lockedDoor    = 3 -- this means it is a wall with a door
+fieldDefinition.unlockedDoor  = 4 -- this means it is a free space with a door drawn
+fieldDefinition.free          = {freeWay,haveBeenThere}
+fieldDefinition.blocked       = {lockedDoor}
 
 
-mazeDefinition.mazeOrig={
+fieldDefinition.mazeOrig={
 -- y -> axis
 {0,0,0,1,0,0,1,0,0}, --1  x -axis 
 {1,1,1,1,3,1,1,1,1}, --2  x   ||
@@ -31,13 +31,13 @@ mazeDefinition.mazeOrig={
 {0,0,0,0,1,0,1,0,0}, --10
 {0,0,0,0,1,1,1,0,0}} --11
 
-mazeDefinition.mazeSmall={
+fieldDefinition.mazeSmall={
 {0,1,0,1,0,1,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0},
 {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
 {0,1,0,1,0,1,0,1,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
 }
 
-mazeDefinition.mazeJonas={
+fieldDefinition.mazeJonas={
 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 {0,1,0,1,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,1,1,1,1,1,0,0},
 {0,1,0,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,0,0,0,1,0,0},
@@ -63,7 +63,7 @@ mazeDefinition.mazeJonas={
 {0,3,0,0,1,0,0,0,0,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1}}
 
 
-mazeDefinition.mazeRunner ={
+fieldDefinition.mazeRunner ={
   {0,0,0,0,0,0,0,1,0,0,0,0,0,0,0},
   {0,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
   {0,1,0,0,1,0,0,1,0,0,1,0,0,1,0},
@@ -82,7 +82,7 @@ mazeDefinition.mazeRunner ={
   {0,0,0,0,0,0,0,1,0,0,0,0,0,0,0}
   }
   
-mazeDefinition.moveTheBox = {
+fieldDefinition.moveTheBox = {
 {0,0,0,0,0,0,0,0,0},
 {0,1,1,1,1,1,1,1,0},
 {0,1,1,1,1,1,1,1,0},
@@ -94,4 +94,4 @@ mazeDefinition.moveTheBox = {
 {0,0,0,0,0,0,0,0,0}
 }
 
-return mazeDefinition
+return fieldDefinition
