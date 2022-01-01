@@ -25,11 +25,12 @@ function player.create()
   player.fixture = love.physics.newFixture(player.body, player.shape, .7) 
   player.fixture:setRestitution(0.17) --let the player bounce a little
   player.fixture:setUserData("player")
+  player.body:setFixedRotation(true)
 end
   
-  function player.getBody()
-    return player.body
-  end
+function player.getBody()
+  return player.body
+end
   
   
 function player.loadAppearance()
@@ -65,6 +66,10 @@ end
   function player.draw()
     love.graphics.setColor(1, 1, 1)
     love.graphics.draw(player.image, player.Move[player.direction][math.floor((player.instance) % player.nOInstances) +  1], player.body:getX()-player.width/2,      player.body:getY()-player.height/2, 0, playerXScale, playerYScale)
+    topLeftX, topLeftY, bottomRightX, bottomRightY = player.fixture:getBoundingBox( 1 )
+    --Check collision bounding box 
+    --love.graphics.setColor(0, 0, 0)   
+    --love.graphics.rectangle("line", topLeftX,topLeftY,bottomRightX-topLeftX,bottomRightY-topLeftY)
   end
   
   function player.update()
